@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora de Interés Compuesto</title>
+  <link rel="stylesheet" href="style.css" />  <!-- Vinculación del CSS -->
+</head>
+<body>
+  <h1>Calculadora de Interés Compuesto</h1>
+
+  <!-- Selección de fórmula -->
+  <div>
+    <label for="formula">Selecciona una fórmula:</label>
+    <select id="formula">
+      <option value="fixedRate">Tasa fija con capital inicial</option>
+      <option value="noInitialCapital">Tasa fija sin capital inicial</option>
+      <option value="variableRate">Tasa variable</option>
+      <option value="periodicContribution">Aporte periódico constante</option>
+      <option value="periodicVariableContribution">Aporte periódico con tasa variable</option>
+      <option value="inverseRate">Calcular tasa r (dada C(t))</option>
+    </select>
+  </div>
+
+  <!-- Entradas de datos -->
+  <div>
+    <label for="initialCapital">Capital inicial:</label>
+    <input type="number" id="initialCapital" placeholder="Ejemplo: 1000" />
+  </div>
+  <div>
+    <label for="rate">Tasa de interés (%):</label>
+    <input type="number" id="rate" step="0.01" placeholder="Ejemplo: 5" />
+  </div>
+  <div>
+    <label for="time">Tiempo:</label>
+    <input type="number" id="time" placeholder="Ejemplo: 5" />
+    <select id="timeUnit">
+      <option value="years">Años</option>
+      <option value="months">Meses</option>
+      <option value="days">Días</option>
+    </select>
+  </div>
+
+  <!-- Botón de cálculo -->
+  <button id="calculate">Calcular</button>
+
+  <!-- Mostrar resultados -->
+  <div>
+    <h3>Resultado:</h3>
+    <p id="resultText">El resultado aparecerá aquí.</p>
+  </div>
+
+  <!-- Mostrar procedimiento -->
+  <div id="procedure" style="margin-top: 20px; padding: 10px; border: 1px solid #ccc;">
+    <h3>Procedimiento:</h3>
+    <pre id="procedureText">El procedimiento aparecerá aquí.</pre>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.7.0/math.min.js"></script>
+</body>
+</html>
